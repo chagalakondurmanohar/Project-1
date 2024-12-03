@@ -25,3 +25,10 @@ variable "public_key" {
     type = string
   
 }
+
+variable "sg_ec2_for_python_api" {
+  
+}
+variable "lb_seg" {
+  
+}

@@ -16,11 +16,11 @@ resource "aws_vpc" "vpc" {
     count= length(var.vpc_private_subnet)
     vpc_id = aws_vpc.vpc.id
     cidr_block = element(var.vpc_private_subnet,count.index)
-    availability_zone = element(var.private_subnet_availability_zone, count.index)
+    availability_zone = element(var.pulic_subnet_availability_zone, count.index)
  }
 
  resource "aws_internet_gateway" "igw" {
-    vpc_id = aws_vpc.vpc
+    vpc_id = aws_vpc.vpc.id
     tags = {
        Name = "dev-proj-1-igw"
     }
@@ -28,7 +28,7 @@ resource "aws_vpc" "vpc" {
  }
  resource "aws_route_table" "route_table" {
    vpc_id = aws_vpc.vpc.id
-   route = {
+   route  {
     cidr_block="0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
    }
@@ -46,10 +46,7 @@ resource "aws_vpc" "vpc" {
 
   resource "aws_route_table" "private_route_table" {
    vpc_id = aws_vpc.vpc.id
-   route = {
-    cidr_block="0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw.id
-   }
+
      tags = {
     Name = "private-rt"
   }

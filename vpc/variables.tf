@@ -14,9 +14,7 @@ variable "vpc_private_subnet" {
     type = list(string)
   
 }
-variable "private_subnet_availability_zone" {
-     type = list(string)
-}
+
 variable "vpc_name" {
   type = string
 }

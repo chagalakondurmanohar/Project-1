@@ -3,7 +3,7 @@ resource "aws_instance" "my_ec2" {
     instance_type =  var.instance_type
     key_name = ""
     subnet_id =  var.subnet_id
-    vpc_security_group_ids = "batch9_key"
+    vpc_security_group_ids = [var.sg_ec2_for_python_api,var.lb_seg]
     associate_public_ip_address = var.enable_public_ip_address
    user_data = var.user_data
    metadata_options {

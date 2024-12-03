@@ -1,0 +1,10 @@
+vpc_cider                      = "10.0.0.0/16"
+vpc_name                       = "dev"
+cidr_public_subnet              = ["10.0.1.0/24", "10.0.2.0/24"]
+pulic_subnet_availability_zone = ["us-east-1a", "us-east-1b"]
+cidr_private_subnet             = ["10.0.3.0/24", "10.0.4.0/24"]
+ec2_sg_name                    = "dev-seg"
+ami_id                         = ""
+instance_type                  = ""
+public_key                     = ""
+lb_name                        = "dev-elb"

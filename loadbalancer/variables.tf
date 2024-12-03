@@ -11,7 +11,7 @@ variable "lb_type" {
   
 }
 variable "lb_seg" {
-    type = list(string)
+
   
 }
 variable "lb_subnets" {
@@ -38,9 +38,6 @@ variable "lb_listener_protocal" {
   
 }
 variable "lb_listner_default_action" {
-  
-}
-variable "lb_target_group_arn" {
   
 }
 variable "lb_https_listner_protocol" {
